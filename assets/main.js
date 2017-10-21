@@ -11,6 +11,7 @@ function setup() {
     symbol = new Symbol(
         width / 2,
         0,
+        5
     );
     symbol.setToRandomSymbol();
     textSize(symbolSize);
@@ -21,8 +22,10 @@ function draw() {
 }
 
 function Symbol(x, y) {
+function Symbol(x, y, speed) {
     this.x = x;
     this.y = y;
+    this.speed = speed;
     this.value;
     
     this.setToRandomSymbol = function() {
@@ -33,5 +36,9 @@ function Symbol(x, y) {
     this.render = function() {
         fill(0, 255, 70);
         text(this.value, this.x, this.y);
+        this.fall();
+    }
+    this.fall = function() {
+       this.y += this.speed; 
     }
 }
