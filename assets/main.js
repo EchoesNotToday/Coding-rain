@@ -27,12 +27,19 @@ function Symbol(x, y, speed) {
     this.x = x;
     this.y = y;
     this.speed = speed;
+    this.switchSpeed = 5;
     this.value;
     
     this.setToRandomSymbol = function() {
         this.value =String.fromCharCode(
         0x30A0 + round(random(0, 96)) //random Katakana symbol unicode
         );
+    this.setToRandomSymbol = function () {
+        if (frameCount % this.switchSpeed == 0) {
+            this.value = String.fromCharCode(
+                0x30A0 + round(random(0, 96)) //random Katakana symbol unicode
+            );
+        }
     }
     this.render = function() {
         fill(0, 255, 70);
