@@ -18,6 +18,7 @@ function setup() {
 }
 
 function draw() {
+    background(0);
     symbol.render();
 }
 
