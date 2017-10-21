@@ -6,6 +6,9 @@ function setup() {
     window.innerWidth,
     window.innerHeight
     
+        window.innerWidth,
+        window.innerHeight
+
     );
     background(0);
     symbol = new Symbol(
@@ -42,15 +45,20 @@ function Symbol(x, y, speed) {
         }
     }
     this.render = function() {
+    this.render = function () {
         fill(0, 255, 70);
         text(this.value, this.x, this.y);
         this.fall();
+        this.setToRandomSymbol();
     }
     this.fall = function() {
        this.y += this.speed; 
+    this.fall = function () {
         if (this.y >= innerHeight) {
            this.y =0; 
+            this.y = 0;
         }
         
+        this.y += this.speed;
     }
 }
