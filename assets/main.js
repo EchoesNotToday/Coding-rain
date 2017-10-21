@@ -41,5 +41,9 @@ function Symbol(x, y, speed) {
     }
     this.fall = function() {
        this.y += this.speed; 
+        if (this.y >= innerHeight) {
+           this.y =0; 
+        }
+        
     }
 }
