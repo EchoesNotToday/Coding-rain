@@ -1,4 +1,6 @@
 var symbol;
+var symbolSize = 45;
+
 function setup() {
     createCanvas(
     window.innerWidth,
@@ -11,6 +13,7 @@ function setup() {
         height / 2
     );
     symbol.setToRandomSymbol();
+    textSize(symbolSize);
 }
 
 function draw() {
