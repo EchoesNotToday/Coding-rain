@@ -10,7 +10,7 @@ function setup() {
     background(0);
     symbol = new Symbol(
         width / 2,
-        height / 2
+        0,
     );
     symbol.setToRandomSymbol();
     textSize(symbolSize);
