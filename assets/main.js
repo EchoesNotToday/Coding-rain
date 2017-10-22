@@ -1,23 +1,14 @@
-var symbol;
 var symbolSize = 45;
 var chain;
 
 function setup() {
     createCanvas(
-    window.innerWidth,
-    window.innerHeight
     
         window.innerWidth,
         window.innerHeight
 
     );
     background(0);
-    symbol = new Symbol(
-        width / 2,
-        0,
-        5
-    );
-    symbol.setToRandomSymbol();
     chain = new SymbolChain();
     chain.generateSymbols();
     textSize(symbolSize);
@@ -25,11 +16,9 @@ function setup() {
 
 function draw() {
     background(0);
-    symbol.render();
     chain.render();
 }
 
-function Symbol(x, y) {
 function Symbol(x, y, speed) {
     this.x = x;
     this.y = y;
@@ -37,10 +26,6 @@ function Symbol(x, y, speed) {
     this.switchSpeed = 5;
     this.value;
     
-    this.setToRandomSymbol = function() {
-        this.value =String.fromCharCode(
-        0x30A0 + round(random(0, 96)) //random Katakana symbol unicode
-        );
     this.setToRandomSymbol = function () {
         if (frameCount % this.switchSpeed == 0) {
             this.value = String.fromCharCode(
@@ -48,18 +33,8 @@ function Symbol(x, y, speed) {
             );
         }
     }
-    this.render = function() {
-    this.render = function () {
-        fill(0, 255, 70);
-        text(this.value, this.x, this.y);
-        this.fall();
-        this.setToRandomSymbol();
-    }
-    this.fall = function() {
-       this.y += this.speed; 
     this.fall = function () {
         if (this.y >= innerHeight) {
-           this.y =0; 
             this.y = 0;
         }
         
