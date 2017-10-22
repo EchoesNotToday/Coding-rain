@@ -29,7 +29,7 @@ function Symbol(x, y, speed) {
     this.setToRandomSymbol = function () {
         if (frameCount % this.switchSpeed == 0) {
             this.value = String.fromCharCode(
-                0x30A0 + round(random(0, 96)) //random Katakana symbol unicode
+                0x30A0 + round(random(0, 95)) //random Katakana symbol unicode
             );
         }
     }
