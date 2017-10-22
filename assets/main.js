@@ -43,8 +43,7 @@ function Symbol(x, y, speed) {
 }
 function SymbolChain() {
     this.symbols = [];
-    this.totalSymbols = 5;
-    this.speed = 5;
+    this.totalSymbols = round(random(5, 15));
     this.speed = round(random(5,10));
     this.generateSymbols = function () {
         var y = 0;
