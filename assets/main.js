@@ -23,7 +23,7 @@ function Symbol(x, y, speed) {
     this.x = x;
     this.y = y;
     this.speed = speed;
-    this.switchSpeed = 5;
+    this.switchSpeed = round(random(10, 30));
     this.value;
     
     this.setToRandomSymbol = function () {
